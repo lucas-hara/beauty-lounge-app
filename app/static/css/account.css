@@ -1,45 +1,35 @@
-i {
-    color: white;
-    vertical-align: middle;
+p {
+    text-align: center;
 }
 
-img {
+.login-bg {
+    background: url('/static/images/veludo.jpeg');
+    background-repeat: round;
+}
+
+.login-bg .color-overlay {
+    background-color: rgba(0, 20, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(0.2rem);
+
+}
+
+.logo {
     display: block;
     margin: 0 auto 2rem;
     width: 60%;
 }
 
-p {
-    color: white;
-    text-align: center;
-}
-
-button {
-    width: 100%;
-    padding: 0.5rem;
-    margin: 0.4rem auto;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-.login-bg {
-    background:
-        linear-gradient(rgba(0, 20, 0, 0.6),
-            rgba(0, 20, 0, 0.6)),
-        url('/static/images/veludo.jpeg');
-}
-
 .container {
     display: grid;
-    width: 20%;
     min-width: 15rem;
+    max-width: fit-content;
     min-height: fit-content;
-    padding: 1% 1%;
+    padding: 2% 2%;
 
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
@@ -48,32 +38,65 @@ button:hover {
     margin: 3rem auto;
 
     place-self: center;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
-.container .line {
-    display: grid;
-    grid-template-columns: 10% 90%;
-    place-items: center;
-    column-gap: 0.4rem;
-    margin: 0.5rem;
-}
-
-input [type="text"]{
+.line {
+    margin: 0.5rem auto;
+    display: flex;
     width: 100%;
-    box-sizing: border-box;
-    padding: 0.9em;
-    margin: 0.2rem auto;
-    border: none;
-    border-radius: 0.2rem;
-    color: white;
-    background-color: rgb(0, 0, 0, 0.4);
 }
 
-label {
+.lg-input {
+    border: 0.15rem solid rgb(0, 0, 0, 0.0);
+    margin-left: 2rem;
+    background-color: rgb(255, 255, 255, 0.2);
     color: white;
+    outline: none;
+    transition: all 0.4s;
+}
+
+.lg-input:focus {
+    border: 0.15rem solid var(--melon);
+}
+
+.lg-input:focus + .input-icon {
+    color: var(--melon);
+}
+
+.lg-input::placeholder {
+    color: white;
+    opacity: 0.6;
+}
+
+.input-icon {
+    position: absolute;
+    z-index: 1;
+
+    padding: 0.5rem;
+    vertical-align: middle;
+}
+
+.lg-checkbox{
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lg-checkbox label {
+    font-size: 0.7rem;
     display: flex;
     align-items: center;
-    font-size: 0.8rem;
+}
+
+.lg-button {
+    background-color: var(--melon);
+    color: black;
+    transition: all 0.2s;
+}
+
+.lg-button:hover {
+    /* background-color: var(--melon); */
+    filter: drop-shadow(0 0 0.2rem var(--melon))
 }
