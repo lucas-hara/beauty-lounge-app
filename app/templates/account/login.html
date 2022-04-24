@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<!-- <body style="background-image: url('/static/images/veludo.jpeg');"> -->
+
+<body class="login-bg">
+
+    {% extends 'base/base.html' %}
+    {% block content %}
+
+    <link rel="stylesheet" href="static/css/account.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <div class="color-overlay">
+        <!-- logo -->
+        <div class="container">
+            <img src="/static/images/beauty-lounge-logo.png">
+
+            <!-- form -->
+            <form method="post">
+
+                <!-- email -->
+                <div class="line">
+                    <i class="bi bi-person-fill"></i>
+                    <input type="text" placeholder="e-mail" name="email" required>
+                </div>
+
+                <!-- senha -->
+                <div class="line">
+                    <i class="bi bi-key-fill"></i>
+                    <input type="password" placeholder="senha" name="password" required>
+                </div>
+
+                <!-- checkbox (lembrar senha) -->
+                <div>
+                    <label for="remember-me"><input type="checkbox" id="remember-me" name="remember-me">Lembrar
+                        senha</label>
+                </div>
+
+                <!-- botão login -->
+                <button>LOG IN</button>
+
+            </form>
+
+            <p style="margin: 3rem 0 0">
+                Iara Moraes <br>
+                Massoterapia e Estética
+            </p>
+            <div style="font-size: 0.7rem; font-weight:light">
+                <p>
+                    <i class="bi bi-instagram"></i>
+                    @iarams.massoterapia
+                </p>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+
+</body>
+
+</html>
