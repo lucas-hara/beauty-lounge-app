@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 
 <head>
-    <meta http-equiv="refresh" content="2">
+    <!-- <meta http-equiv="refresh" content="3"> -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,8 +15,33 @@
 
 
 <body>
+
+    {% for category, message in get_flashed_messages(with_categories=True) %}
+    <div class="notification {{category}}">
+        <span class="notification-message">{{ message }}</span>
+        <span class="notification-close-btn">&times;</span>
+    </div>
+    {% endfor %}
+
+
+
     {% block content%}
     {% endblock %}
+
+    <!-- Script para fechar as notificações -->
+    <script>
+        var close = document.getElementsByClassName("notification-close-btn");
+        var i;
+
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.opacity = "0";
+                setTimeout(function () { div.style.display = "none"; }, 600);
+            }
+        }
+    </script>
+
 </body>
 
 </html>

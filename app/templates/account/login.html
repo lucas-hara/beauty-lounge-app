@@ -11,47 +11,49 @@
     <link rel="stylesheet" href="static/css/account.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
-    <div>
-        <!-- logo -->
-        <div class="container">
-            <img class="logo" src="/static/images/beauty-lounge-logo.png">
+    <!-- logo -->
+    <div class="container">
+        <img class="logo" src="/static/images/beauty-lounge-logo.png">
 
-            <!-- form -->
-            <form method="post">
+        <!-- form -->
+        <form method="post">
 
-                <!-- email -->
-                <div class="line">
-                    <input class="lg-input" type="text" placeholder="Email" name="email" required>
-                    <i class="bi bi-person-fill input-icon"></i>
-                </div>
+            {{ form.hidden_tag() }}
 
-                <!-- senha -->
-                <div class="line">
-                    <input class="lg-input" type="password" placeholder="Senha" name="password" required>
-                    <i class="bi bi-key-fill input-icon"></i>
-                </div>
-
-                <!-- checkbox (lembrar senha) -->
-                <div class="lg-checkbox">
-                    <label for="remember-me"><input type="checkbox" id="remember-me" name="remember-me">Lembrar
-                        senha</label>
-                </div>
-
-                <!-- botão login -->
-                <button class="lg-button">LOG IN</button>
-
-            </form>
-
-            <p style="margin: 3rem 0 0">
-                Iara Moraes <br>
-                Massoterapia e Estética
-            </p>
-            <div style="font-size: 0.7rem">
-                <p>
-                    <i class="bi bi-instagram"></i>
-                    @iarams.massoterapia
-                </p>
+            <!-- email -->
+            <div class="line">
+                <!-- <input class="lg-input" type="text" placeholder="Email" name="email" required> -->
+                {{ form.email(class="lg-input", placeholder="Email") }}
+                <i class="bi bi-person-fill input-icon"></i>
             </div>
+
+            <!-- senha -->
+            <div class="line">
+                <!-- <input class="lg-input" type="password" placeholder="Senha" name="password" required> -->
+                {{ form.password(class="lg-input", type="password", placeholder="Senha") }}
+                <i class="bi bi-key-fill input-icon"></i>
+            </div>
+
+            <!-- checkbox (lembrar senha) -->
+            <div class="lg-checkbox">
+                <label for="remember-me"><input type="checkbox" id="remember-me" name="remember-me">Lembrar
+                    senha</label>
+            </div>
+
+            <!-- botão login -->
+            <button type="submit" name="login" class="lg-button">LOG IN</button>
+
+        </form>
+
+        <p style="margin: 3rem 0 0">
+            Iara Moraes <br>
+            Massoterapia e Estética
+        </p>
+        <div style="font-size: 0.7rem">
+            <p>
+                <i class="bi bi-instagram"></i>
+                @iarams.massoterapia
+            </p>
         </div>
     </div>
 
