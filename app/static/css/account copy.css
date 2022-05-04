@@ -1,0 +1,121 @@
+p {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+}
+
+.login-bg {
+    background-image: url('/static/images/bg-01.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    max-width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+.login-bg::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: -webkit-linear-gradient(45deg, rgba(0, 10, 0, 0.4), rgba(255, 255, 255, 0.5));
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 2rem;
+    width: 60%;
+}
+
+.container {
+    display: grid;
+    min-width: 15rem;
+    max-width: fit-content;
+    min-height: fit-content;
+    padding: 3rem;
+
+
+
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    margin: 3rem auto;
+
+    place-self: center;
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+}
+
+.line {
+    margin: 0.5rem auto;
+    display: flex;
+    width: 100%;
+}
+
+.lg-input {
+    border: 0.15rem solid rgb(0, 0, 0, 0.0);
+    margin-left: 2rem;
+    background-color: rgb(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+    transition: all 0.4s;
+}
+
+.lg-input:focus {
+    border: 0.15rem solid var(--melon);
+}
+
+.lg-input:focus+.input-icon {
+    color: var(--melon);
+}
+
+.lg-input::placeholder {
+    color: white;
+    opacity: 0.6;
+}
+
+.input-icon {
+    position: absolute;
+    z-index: 1;
+
+    padding: 0.5rem;
+    vertical-align: middle;
+
+    transition: all 0.4s;
+    
+}
+
+.lg-checkbox {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lg-checkbox label {
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+}
+
+.lg-button {
+    background-color: var(--melon);
+    color: var(--dark-green);
+    transition: all 0.2s;
+}
+
+.lg-button:hover {
+    /* background-color: var(--melon); */
+    filter: drop-shadow(0 0 0.2rem var(--melon))
+}
